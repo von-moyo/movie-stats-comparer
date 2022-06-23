@@ -88,7 +88,7 @@ const runComparison = () => {
 }
 
 const movieTemplate = movieDetail => {
-  // const dollars = parseInt(movieDetail.BoxOffice.replace(/\$/g, '').replace(/,/g, ''));
+  const dollars = parseInt(movieDetail.BoxOffice.replace(/\$/g, '').replace(/,/g, ''));
   const Metascore = parseInt(movieDetail.Metascore);
   const imdbRating = parseFloat(movieDetail.imdbRating);
   const imdbVotes = parseInt(movieDetail.imdbVotes.replace(/,/g, ''));
@@ -122,7 +122,7 @@ const movieTemplate = movieDetail => {
     <p class="title">${movieDetail.Awards}</p>
     <p class="subtitle">Awards</p>
     </article>
-    <article class="notification is-primary">
+    <article data-value=${dollars} class="notification is-primary">
     <p class="title">${movieDetail.BoxOffice}</p>
     <p class="subtitle">Box Office</p>
     </article>
